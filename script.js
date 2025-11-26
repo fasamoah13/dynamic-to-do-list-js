@@ -24,12 +24,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create the remove button
         const removeBtn = document.createElement('button');
         removeBtn.textContent = "Remove";
-        removeBtn.className = "remove-btn";
+
+        // Use classList.add (required)
+        removeBtn.classList.add('remove-btn');
 
         // Remove task when button is clicked
-        removeBtn.onclick = function () {
+        removeBtn.addEventListener('click', function () {
             taskList.removeChild(li);
-        };
+        });
 
         // Add remove button to list item
         li.appendChild(removeBtn);
